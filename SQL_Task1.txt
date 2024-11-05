@@ -1,0 +1,37 @@
+--BP215 adlı database yaradılır.
+Create database BP215 
+Use BP215
+--Students cədvəli yaradılır, Name, Surname, Age, AvgPoint sütunları yaradılır.
+Create table Strudents
+(
+[Name] nvarchar(100),
+Surname nvarchar(100),
+Age int,
+AvgPoint decimal
+)
+--tabla-a datalar elave edin.
+Insert into Strudents
+Values
+('Ehmed','Abdulayev',19,45),
+('Samire','Eliyeva',20,95),
+('Qedir','Quluzyev',19,90),
+('Semed','Hebibov',19,78),
+('Servan','Serdarli',20,85),
+('Allahverdi','Hesenov',19,75),
+('Xatire','Rustemli',19,95)
+
+Select * from Strudents
+
+-- 1. Ortalaması 51dən yuxarı olan tələbələri göstərsin
+Select [Name],Surname,AvgPoint From Strudents
+Where AvgPoint > 51
+
+--2. Ortalaması 51dən böyük, 90dan az olan tələbələri göstərsin. 
+Select [Name],Surname,AvgPoint From Strudents
+Where  AvgPoint > 51 and AvgPoint<90  -- Alternativ option : Where AvgPoint Between 90 and 51 
+
+--3. A ilə başlayıb i ilə bitən tələbələri göstərsin.*/
+Select [Name], Surname from Strudents
+where [Name] Like 'A%i'
+
+
